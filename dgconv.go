@@ -112,7 +112,6 @@ func Getchannel(s *discordgo.Session, channel string) (id string) {
 			id = channel[2 : len(channel)-1]
 			break
 		}
-		fallthrough
 	}
 	return
 }
