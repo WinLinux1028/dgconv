@@ -106,7 +106,7 @@ func Getchannel(s *discordgo.Session, channel string) (id string) {
 		}
 		fallthrough
 	case regexp.MustCompile(`<#[0-9]+>`).MatchString(channel):
-		_, check := s.User(channel[2 : len(channel)-1])
+		_, check := s.State.Channel(channel[2 : len(channel)-1])
 		if check != nil {
 		} else {
 			id = channel[2 : len(channel)-1]
