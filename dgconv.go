@@ -113,18 +113,6 @@ func Getchannel(s *discordgo.Session, channel string) (id string) {
 			break
 		}
 		fallthrough
-	default:
-		for _, guild := range s.State.Guilds {
-			for _, ch := range guild.Channels {
-				if channel == ch.Name {
-					id = ch.ID
-					break
-				}
-			}
-			if len(id) != 0 {
-				break
-			}
-		}
 	}
 	return
 }
