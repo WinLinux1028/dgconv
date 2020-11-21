@@ -117,8 +117,7 @@ func Getchannel(s *discordgo.Session, channel string) (id string) {
 }
 
 //Getmember returns *discordgo.Member from ID
-func Getmember(s *discordgo.Session, user string) (member *discordgo.Member) {
-	id := Getuser(s, user)
+func Getmember(s *discordgo.Session, id string) (member *discordgo.Member) {
 	var err error
 	for _, g := range s.State.Guilds {
 		member, err = s.State.Member(g.ID, id)
